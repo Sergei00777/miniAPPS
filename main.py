@@ -4,7 +4,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters
 
 # Конфигурация
 BOT_TOKEN = "7825085787:AAHWd3242SETfxt5iGW-7vfcnl5mrVbxwOQ"  # Ваш токен
-WEB_APP_URL = "https://сергей-ру.рф/"  # URL вашего Mini App
+WEB_APP_URL = "https://sergei00777.github.io/miniAPPS/" # URL вашего Mini App
 
 
 # Обработчик команды /start
