@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple TMA</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+        }
+        button {
+            background: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Привет, <span id="user-name">друг</span>! 👋</h1>
+    <p>Это простой Mini App в Telegram.</p>
+    <button id="btn-alert">Нажми меня!</button>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Раскрываем приложение на весь экран
+
+        // Показываем данные пользователя
+        document.getElementById('user-name').textContent =
+            tg.initDataUnsafe.user?.first_name || 'друг';
+
+        // Обработчик кнопки
+        document.getElementById('btn-alert').addEventListener('click', () => {
+            tg.showAlert('Кнопка работает! ✅');
+        });
+
+        // Закрыть приложение (если нужно)
+        // tg.close();
+    </script>
+</body>
+</html>
